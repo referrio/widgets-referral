@@ -2,9 +2,22 @@ import * as React from "react";
 
 function App({ domElement }) {
   const opportunityID = domElement.getAttribute("opportunity-id");
+  const instance = domElement.getAttribute("instance");
+
+  const getBaseUrl = () => {
+    switch (instance.toLowerCase()) {
+      case "local":
+        return "http://localhost:3000";
+      case "qa":
+        return "https://referrio.qa.nfiny.com";
+      case "prod":
+      default:
+        return "https://referrio.com";
+    }
+  };
 
   const onClick = () => {
-    const url = `http://localhost:3000/refer-public/${opportunityID}`;
+    const url = `${getBaseUrl()}/refer-public/${opportunityID}`;
     var win = window.open(url, "_blank");
     win.focus();
   };
