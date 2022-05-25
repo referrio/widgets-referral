@@ -5,7 +5,7 @@ function App({ domElement }) {
   const instance = domElement.getAttribute("instance");
 
   const getBaseUrl = () => {
-    switch (instance.toLowerCase()) {
+    switch (instance?.toLowerCase()) {
       case "local":
         return "http://localhost:3000";
       case "qa":
