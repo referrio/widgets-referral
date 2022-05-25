@@ -5,7 +5,11 @@ function App({ domElement }) {
   const instance = domElement.getAttribute("instance");
 
   const getBaseUrl = () => {
-    switch (instance?.toLowerCase()) {
+    if (!instance) {
+      return "https://referrio.com";
+    }
+
+    switch (instance.toLowerCase()) {
       case "local":
         return "http://localhost:3000";
       case "qa":
