@@ -36,8 +36,8 @@ function App({ domElement }) {
     fontWeight: "600",
     lineHeight: "18px",
     color: "white",
-    border: "2px solid #ef6c2d",
-    backgroundColor: "#ef6c2d",
+    border: "2px solid #28A428",
+    backgroundColor: "#28A428",
     marginRight: "8px",
   };
 
